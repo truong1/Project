@@ -10,15 +10,27 @@
 	background-color: black;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 16px 30px;
     text-align: right;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 5px 100px;
+    margin: 7px 100px;
     cursor: pointer;
 	}
-	h1 {color: red; text-align:center;}
+	.hisngeo {
+	background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 30px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px 100px;
+    cursor: pointer;
+	}
+	h1 {color: red; text-align:right;}
     #reg {text-align:right;}
 	body {background-image: url(https://raw.githubusercontent.com/truong1/TICTACTOE/master/background1.png);
 		width: 500px;
@@ -28,10 +40,10 @@
 </head>
 <body>
 	<h1>GAME START</h1>
-	<button class="button" onclick="typemath()">Play Math questions</button><br>
-	<button class="button" onclick="typescience()">Play Sciene questions</button><br>
-	<button class="button" onclick="typeall()">Play public knowledge questions</button><br>
-	<button class="button" onclick="typehisngra()">Play history and geography questions</button>
+	<button class="button" onclick="typemath()">Math questions</button><br>
+	<button class="button" onclick="typescience()">Sciene questions</button><br>
+	<button class="button" onclick="typeall()">Public knowledge questions</button><br>
+	<button class="hisngeo" onclick="typehisngra()">History and geography questions</button>
 	<script>
 		function typemath() {
 			var quiz,ques;
