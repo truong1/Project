@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+<title>game</title>
+  
+<style>
+  	.button {
+	background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 2px;
+    cursor: pointer;
+	}
+	h1 {color: red; text-align:center;}
+    #reg {text-align:right;}
+	body {background-image: url(https://raw.githubusercontent.com/truong1/TICTACTOE/master/background1.png);
+		width: 500px;
+		height: 450px;
+	}
+</style>
+</head>
+<body>
+	<h1>GAME START</h1>
+	<button class="button" onclick="typemath()">Play Math questions</button><br>
+	<button class="button" onclick="typescience()">Play Sciene questions</button><br>
+	<button class="button" onclick="typeall()">Play public knowledge questions</button><br>
+	<button class="button" onclick="typehisngra()">Play history and geography questions</button>
+	<script>
+		function typemath() {
+			var quiz,ques;
+			var play = true;
+			var quizCmplete = 0;
+			var quiznow = 1;
+			var money = 0;
+			var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
+			var question = ["2+2=?","",];
+			var choicecorrect = ["B",];
+			var choiceA = ["   A:3",];
+			var choiceB = ["   B:4",];
+			var choiceC = ["   C:5",];
+			var choiceD = ["   D:6",];
+			for (i = 0;i < 15; i++) {
+				if (play == true){
+					ques = Math.floor(Math.random()*question.length);
+					quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+					if (quiz == choicecorrect[ques]) {
+						quizCmplete = quizCmplete+1;
+						quiznow = quiznow+1;
+						delete question[ques];
+						delete choicecorrect[ques];
+						delete choiceA[ques];
+						delete choiceB[ques];
+						delete choiceC[ques];
+						delete choiceD[ques];
+						money = listmoney[quizCmplete];
+						alert("You complete question " +quizCmplete+". Now your money is: $"+money);
+				  } else{
+						alert("Your answer is wrong. The answer is "+ choicecorrect[ques]);
+						alert("Your money is $" + money)
+						play = false;
+						}
+					} 
+									}
+	}
+		function typescience() {
+			var quiz,ques;
+			var play = true;
+			var quizCmplete = 0;
+			var quiznow = 1;
+			var money = 0;
+			var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
+			var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ",];
+			var choicecorrect = ["C","D"];
+			var choiceA = ["   A:T.A.Edison","   A:The Earth and The Venus",];
+			var choiceB = ["   B:A.Nobel","   B:The Mercury and the Jupiter",];
+			var choiceC = ["   C:A.G.Bell","   C:The Uranus and the Saturn"];
+			var choiceD = ["   D:I.Newton","   D:The Saturn and the Uranus"];
+			for (i = 0;i < 15; i++) {
+				if (play == true){
+					ques = Math.floor(Math.random()*question.length);
+					quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+					if (quiz == choicecorrect[ques]) {
+						quizCmplete = quizCmplete+1;
+						quiznow = quiznow+1;
+						delete question[ques];
+						delete choicecorrect[ques];
+						delete choiceA[ques];
+						delete choiceB[ques];
+						delete choiceC[ques];
+						delete choiceD[ques];
+						money = listmoney[quizCmplete];
+						if (quizCmplete==15){
+							alert("You complete question " +quizCmplete+". Now your money is: $"+money+". And you are the winner");
+					   }else {
+							alert("You complete question " +quizCmplete+". Now your money is: $"+money)
+						}
+				  } else{
+						alert("Your answer is wrong. The answer is "+ choicecorrect[ques]);
+						alert("Your money is $" + money)
+						play = false;
+					}
+
+			} 
+									}
+}
+		function typeall() {
+				var quiz,ques;
+				var play = true;
+				var quizCmplete = 0;
+				var quiznow = 1;
+				var money = 0;
+				var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
+				var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ",];
+				var choicecorrect = ["C","D"];
+				var choiceA = ["   A:T.A.Edison","   A:The Earth and The Venus",];
+				var choiceB = ["   B:A.Nobel","   B:The Mercury and the Jupiter",];
+				var choiceC = ["   C:A.G.Bell","   C:The Uranus and the Saturn"];
+				var choiceD = ["   D:I.Newton","   D:The Saturn and the Uranus"];
+				for (i = 0;i < 15; i++) {
+					if (play == true){
+						ques = Math.floor(Math.random()*question.length);
+						quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+						if (quiz == choicecorrect[ques]) {
+							quizCmplete = quizCmplete+1;
+							quiznow = quiznow+1;
+							delete question[ques];
+							delete choicecorrect[ques];
+							delete choiceA[ques];
+							delete choiceB[ques];
+							delete choiceC[ques];
+							delete choiceD[ques];
+							money = listmoney[quizCmplete];
+							if (quizCmplete==15){
+								alert("You complete question " +quizCmplete+". Now your money is: $"+money+". And you are the winner");
+						   }else {
+								alert("You complete question " +quizCmplete+". Now your money is: $"+money)
+							}
+					  } else{
+							alert("Your answer is wrong. The answer is "+ choicecorrect[ques]);
+							alert("Your money is $" + money)
+							play = false;
+					}
+
+			} 
+									}
+}
+	</script>
+</body>
+</html>
