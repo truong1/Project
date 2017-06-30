@@ -33,8 +33,7 @@
 	h1 {color: red; text-align:right;}
    body {background-image: url(https://raw.githubusercontent.com/truong1/TICTACTOE/master/background1.png);
 		width: 500px;
-		height: 450px;
-	}
+		height: 450px;}
 </style>
 </head>
 <body>
@@ -42,7 +41,6 @@
 	<button class="button" onclick="typemath()">Math questions</button><br>
 	<button class="button" onclick="typescience()">Sciene questions</button><br>
 	<button class="button" onclick="typeall()">Public knowledge questions</button><br>
-	<button class="hisngeo" onclick="typehisngra()">History and geography questions</button>
 	<script>
 		function typemath() {
 			var quiz,ques;
@@ -52,19 +50,21 @@
 			var money = 0;
 			var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
 			var question = ["2+2=?","Find x: x*14=198","If x is an even number, then x*2 must...   ","The triangle ABC: AB=12;BC=19;CA=6.What is the longest side of the triangle   ",
-				       "The number a divide 7 remainder 5, divide 13 remainder 11 so divide 91 remainder...   ","1900:19=?",];
+				       "The number a divide 7 remainder 5, divide 13 remainder 11 so divide 91 remainder...   ","1900:19=?","","","","","","","","","",];
 			var choicecorrect = ["B","C","D","D","A","B","C","A","D","B","A","B","D","C","B",];
-			var choiceA = ["3","12","divisible by 3","AB","13","100",];
-			var choiceB = ["4","13","divisible by 5","BC","7","190",];
-			var choiceC = ["5","14","be an odd number","CA","85","19","",];
-			var choiceD = ["6","15","divisible by 4","None of 3 sides","89","100",];
+			var choiceA = ["3","12","divisible by 3","AB","89","100","","","","","","","","","",];
+			var choiceB = ["4","13","divisible by 5","BC","7","190","","","","","","","","","",];
+			var choiceC = ["5","14","be an odd number","CA","85","19","","","","","","","","","",];
+			var choiceD = ["6","15","divisible by 4","None of 3 sides","13","100","","","","","","","","","",];
+			var lenquestion = question.length;
 			for (i = 0;i < 15; i++) {
 				if (play == true){
-					ques = Math.floor(Math.random()*question.length);
+					ques = Math.floor(Math.random()*lenquestion);
 					quiz = prompt("Question "+quiznow+": "+ question[ques] + "   A:"+choiceA[ques]+"   B:"+choiceB[ques]+"   C:"+choiceC[ques]+"   D:"+choiceD[ques]);
 					if (quiz == choicecorrect[ques]) {
 						quizCmplete = quizCmplete+1;
 						quiznow = quiznow+1;
+						lenquestion =lenquestion-1;
 						delete question[ques];
 						delete choicecorrect[ques];
 						delete choiceA[ques];
@@ -72,7 +72,11 @@
 						delete choiceC[ques];
 						delete choiceD[ques];
 						money = listmoney[quizCmplete];
-						alert("You complete question " +quizCmplete+". Now your money is: $"+money);
+						if (quizCmplete==15){
+								alert("You complete question " +quizCmplete+". Now your money is: $"+money+". And you are the winner");
+					   }else {
+								alert("You complete question " +quizCmplete+". Now your money is: $"+money);
+							}
 				  } else{
 						alert("Your answer is wrong. The answer is "+ choicecorrect[ques]);
 						alert("Your money is $" + money);
@@ -88,16 +92,16 @@
 			var quiznow = 1;
 			var money = 0;
 			var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
-			var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ",];
-			var choicecorrect = ["C","D"];
-			var choiceA = ["   A:T.A.Edison","   A:The Earth and The Venus",];
-			var choiceB = ["   B:A.Nobel","   B:The Mercury and the Jupiter",];
-			var choiceC = ["   C:A.G.Bell","   C:The Uranus and the Saturn"];
-			var choiceD = ["   D:I.Newton","   D:The Saturn and the Uranus"];
+			var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ","","","","","","","","","","","","","",];
+			var choicecorrect = ["C","D","","","","","","","","","","","","","",];
+			var choiceA = ["T.A.Edison","The Earth and The Venus","","","","","","","","","","","","","",];
+			var choiceB = ["A.Nobel","The Mercury and the Jupiter","","","","","","","","","","","","","",];
+			var choiceC = ["A.G.Bell","The Uranus and the Saturn","","","","","","","","","","","","","",];
+			var choiceD = [" I.Newton"," The Saturn and the Uranus","","","","","","","","","","","","","",];
 			for (i = 0;i < 15; i++) {
 				if (play == true){
 					ques = Math.floor(Math.random()*question.length);
-					quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+					quiz = prompt("Question "+quiznow+": "+ question[ques] + "   A:"+choiceA[ques]+"   B:"+choiceB[ques]+"   C:"+choiceC[ques]+"   D:"+choiceD[ques]);
 					if (quiz == choicecorrect[ques]) {
 						quizCmplete = quizCmplete+1;
 						quiznow = quiznow+1;
@@ -111,7 +115,7 @@
 						if (quizCmplete==15){
 							alert("You complete question " +quizCmplete+". Now your money is: $"+money+". And you are the winner");
 					   }else {
-							alert("You complete question " +quizCmplete+". Now your money is: $"+money)
+							alert("You complete question " +quizCmplete+". Now your money is: $"+money);
 						}
 				  } else{
 						alert("Your answer is wrong. The answer is "+ choicecorrect[ques]);
@@ -129,16 +133,16 @@
 				var quiznow = 1;
 				var money = 0;
 				var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
-				var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ",];
+				var question = ["What is the name of the inventor who invented the telephone?   ","What is the sixth planet and the senventh planet at the solar system?   ","","","","","","","","","","","","","",];
 				var choicecorrect = ["C","D"];
-				var choiceA = ["   A:T.A.Edison","   A:The Earth and The Venus",];
-				var choiceB = ["   B:A.Nobel","   B:The Mercury and the Jupiter",];
-				var choiceC = ["   C:A.G.Bell","   C:The Uranus and the Saturn"];
-				var choiceD = ["   D:I.Newton","   D:The Saturn and the Uranus"];
+				var choiceA = ["T.A.Edison","The Earth and The Venus","","","","","","","","","","","","","",];
+				var choiceB = ["A.Nobel","The Mercury and the Jupiter","","","","","","","","","","","","","",];
+				var choiceC = ["A.G.Bell","The Uranus and the Saturn","","","","","","","","","","","","","",];
+				var choiceD = ["I.Newton","The Saturn and the Uranus","","","","","","","","","","","","","",];
 				for (i = 0;i < 15; i++) {
 					if (play == true){
 						ques = Math.floor(Math.random()*question.length);
-						quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+						quiz = prompt("Question "+quiznow+": "+ question[ques] + "   A:"+choiceA[ques]+"   B:"+choiceB[ques]+"   C:"+choiceC[ques]+"   D:"+choiceD[ques]);  
 						if (quiz == choicecorrect[ques]) {
 							quizCmplete = quizCmplete+1;
 							quiznow = quiznow+1;
