@@ -31,8 +31,7 @@
     cursor: pointer;
 	}
 	h1 {color: red; text-align:right;}
-    #reg {text-align:right;}
-	body {background-image: url(https://raw.githubusercontent.com/truong1/TICTACTOE/master/background1.png);
+   body {background-image: url(https://raw.githubusercontent.com/truong1/TICTACTOE/master/background1.png);
 		width: 500px;
 		height: 450px;
 	}
@@ -52,16 +51,17 @@
 			var quiznow = 1;
 			var money = 0;
 			var listmoney = [0,100,200,300,500,1000,2000,3000,6000,8000,15000,20000,35000,40000,80000,150000];
-			var question = ["2+2=?","",];
-			var choicecorrect = ["B",];
-			var choiceA = ["   A:3",];
-			var choiceB = ["   B:4",];
-			var choiceC = ["   C:5",];
-			var choiceD = ["   D:6",];
+			var question = ["2+2=?","Find x: x*14=198","If x is an even number, then x*2 must...   ","The triangle ABC: AB=12;BC=19;CA=6.What is the longest side of the triangle   ",
+				       "",];
+			var choicecorrect = ["B","C","D"
+			var choiceA = ["3","12","divisible by 3",""];
+			var choiceB = ["4","13","divisible by 5",];
+			var choiceC = ["5","14","be an odd number",];
+			var choiceD = ["6","15","divisible by 4",];
 			for (i = 0;i < 15; i++) {
 				if (play == true){
 					ques = Math.floor(Math.random()*question.length);
-					quiz = prompt("Question "+quiznow+": "+ question[ques] + choiceA[ques] + choiceB[ques] + choiceC[ques] + choiceD[ques]);  
+					quiz = prompt("Question "+quiznow+": "+ question[ques] + "   A:"+choiceA[ques]+"   B:"+choiceB[ques]+"   C:"+choiceC[ques]+"   D:"+choiceD[ques])
 					if (quiz == choicecorrect[ques]) {
 						quizCmplete = quizCmplete+1;
 						quiznow = quiznow+1;
